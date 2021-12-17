@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Haneul's portfolio</title>
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="aos.css">
+
+    <meta property="og:title" content="하늘 포트폴리오" />
+    <meta property="og:url" content="https://gksmfdlfkrh.github.io/haneulportfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/yuhanvd.png">
+    <meta property="og:title" content="하늘 포트폴리오">
+    <meta property="og:description" content="Haneul's 2021 Portfolio">
+
+
+    <link rel="shortcut icon" href="img/favicon2.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon2.ico" type="image/x-icon">
+    <script src="script/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){// 왼쪽으로 스크롤
+
+                // $(window).on('scroll', function() {
+                //     $("#realcontent ul").css("left", -$(window).scrollTop());
+                // });
+        // background color
+
+
+        $(".menuBtn").hover(function(){
+            $("#hiddenBd").addClass("bdHover");
+        },function(){
+            $("#hiddenBd").removeClass("bdHover");
+    });
+        var scrollPosition = $(window).scrollTop();
+        var scrollNum = 0;
+
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            if ( scroll > ( scrollPosition + 20 )  && scrollNum == 0 ) {
+                console.log('scrollDown');
+                $("#project_container").slideUp(500);
+                scrollNum = 1;
+            } else if ( scroll <  ( scrollPosition - 20 )  && scrollNum == 1 ) {
+                console.log('scrollUp');
+                $("#project_container").slideDown(500);
+                scrollNum = 0;
+            }
+            scrollPosition = scroll;
+        });
+
+
+                var bgColor = ["#FFFAE6","#ffffff","#fff1eb","#f9ffde","#F3F8FF","#ffffff","#ffefee","#ffffff"];
+
+                $("body").css({backgroundColor:bgColor[0]});
+
+
+                var li01Left = $("#project_container").eq(0).offset().left;
+                var li02Left = $("#project_container").eq(1).offset().left;
+                var li03Left = $("#project_container").eq(2).offset().left;
+                var li04Left = $("#project_container").eq(3).offset().left;
+                var li05Left = $("#project_container").eq(4).offset().left;
+                var li06Left = $("#project_container").eq(5).offset().left;
+                var li07Left = $("#project_container").eq(6).offset().left;
+                var li08Left = $("#project_container").eq(7).offset().left;
+
+                var leftMinus = $("#hiddenleft").width();
+
+                $(window).scroll(function() {
+                    var scroll = $(window).scrollTop();
+
+                    if ( scroll > ( li07Left - leftMinus )) {
+                        $("body").css({backgroundColor:bgColor[7]});
+                        $("ol li p").css({width:0});
+                        $("ol li p").eq(3).css({width:"100%"});
+                    } else if ( scroll > ( li06Left - leftMinus )) {
+                        $("body").css({backgroundColor:bgColor[6]});
+                        $("ol li p").css({width:0});
+                        $("ol li p").eq(2).css({width:"100%"});
+                    } else if ( scroll > ( li05Left - leftMinus )) {
+                        $("body").css({backgroundColor:bgColor[5]});
+                        $("ol li p").css({width:0});
+                        $("ol li p").eq(2).css({width:"100%"});
+                    } else if ( scroll > ( li04Left - leftMinus )) {
+                        $("body").css({backgroundColor:bgColor[4]});
+                        $("ol li p").css({width:0});
+                        $("ol li p").eq(1).css({width:"100%"});
+                    } else if ( scroll > ( li03Left - leftMinus )) {
+                        $("body").css({backgroundColor:bgColor[3]});
+                        $("ol li p").css({width:0});
+                        $("ol li p").eq(1).css({width:"100%"});
+                    } else if ( scroll > ( li02Left - leftMinus )) {
+                        $("body").css({backgroundColor:bgColor[2]});
+                        $("ol li p").css({width:0});
+                        $("ol li p").eq(0).css({width:"100%"});
+                    } else {
+                        $("body").css({backgroundColor:bgColor[1]});
+                        $("ol li p").css({width:0});
+                        $("ol li p").eq(0).css({width:"100%"});
+                        // $("#realcontent ul li").removeClass("clickOpacity");
+                    }
+                });
+
+                $("#project_container").eq(0).mouseover(function(){
+                    $("body").css({backgroundColor:bgColor[0]});
+                });
+                $("#project_container").eq(1).mouseover(function(){
+                    $("body").css({backgroundColor:bgColor[1]});
+                });
+                $("#project_container").eq(2).mouseover(function(){
+                    $("body").css({backgroundColor:bgColor[2]});
+                });
+                $("#project_container").eq(3).mouseover(function(){
+                    $("body").css({backgroundColor:bgColor[3]});
+                });
+                $("#project_container").eq(4).mouseover(function(){
+                    $("body").css({backgroundColor:bgColor[4]});
+                });
+                $("#project_container").eq(5).mouseover(function(){
+                    $("body").css({backgroundColor:bgColor[5]});
+                });
+                $("#project_container").eq(6).mouseover(function(){
+                    $("body").css({backgroundColor:bgColor[6]});
+                });
+                $("#project_container").eq(7).mouseover(function(){
+                    $("body").css({backgroundColor:bgColor[7]});
+                });
+                $("#project_container").eq(8).mouseover(function(){
+                    $("body").css({backgroundColor:bgColor[8]});
+                });
+
+                $("#project_container").hover(function(){
+                    $(this).addClass("imgScale");
+                },function(){
+                    $(this).removeClass("imgScale");
+                });
+
+
+                $("ol li").eq(0).click(function(){
+                    $("#project_container").animate({left:(-li01Left+leftMinus)},500);
+                });
+                $("ol li").eq(1).click(function(){
+                    $("#project_container").animate({left:(-li04Left+leftMinus)},500);
+                });
+                $("ol li").eq(2).click(function(){
+                    $("#project_container").animate({left:(-li06Left+leftMinus)},500);
+                });
+                $("ol li").eq(3).click(function(){
+                    $("#project_container").animate({left:(-li08Left+leftMinus)},500);
+                });
+
+
+                $("ol li").onclick(function(){
+                    $("ol li p").css({width:0});
+                    $("p",this).css({width:"100%"});
+                });
+
+
+                var windowWidth = $(window).width();
+
+                if ( windowWidth > 360 ) {
+                        $(window).on('scroll', function() {
+                            b = $(window).scrollTop();
+                            $("#project_container").css("left", -b);
+                        });
+
+                        $("ol li p").eq(0).css({width:"100%"});
+
+                        $(window).scroll(function() {
+                            $("#project_container").removeClass("clickOpacity");
+                        });
+
+                        $("ol li").eq(0).click(function(){
+                            $("body").css({backgroundColor:bgColor[1]});
+                            $("#project_container").addClass("clickOpacity");
+                            $("#project_container.editorials").removeClass("clickOpacity");
+                        });
+                        $("ol li").eq(1).click(function(){
+                            $("body").css({backgroundColor:bgColor[4]});
+                            $("#project_container").addClass("clickOpacity");
+                            $("#project_container.web").removeClass("clickOpacity");
+                        });
+                        $("ol li").eq(2).click(function(){
+                            $("body").css({backgroundColor:bgColor[6]});
+                            $("#project_container").addClass("clickOpacity");
+                            $("#project_container.ui/ux").removeClass("clickOpacity");
+                        });
+                        $("ol li").eq(3).click(function(){
+                            $("body").css({backgroundColor:bgColor[8]});
+                            $("#project_container").addClass("clickOpacity");
+                            $("#project_container.logo").removeClass("clickOpacity");
+                        });
+
+                    }
+                    // mobile menu button
+
+                            $("button#mobileMenuBtn").click(function(){
+                                    $("#mobileMenuBtnbg").addClass("mobileBtnClick");
+                                    $("#mobileMenuBtnbg #mobileMenu").fadeIn(500);
+                                    $(this).fadeOut(500);
+                                    $("button#mobileMenuBtnClose").fadeIn(500);
+
+                                });
+
+                             $("button#mobileMenuBtnClose").click(function(){
+                                    $("#mobileMenuBtnbg").removeClass("mobileBtnClick");
+                                    $("#mobileMenuBtnbg #mobileMenu").fadeOut(500);
+                                    $(this).fadeOut(500);
+                                    $("button#mobileMenuBtn").fadeIn(500);
+
+                    });
+                  });
+                </script>
+  </head>
+
+
+
+  <body style="overflow-x:hidden">
+
+    <header>
+      <a href="index.html">
+
+        <div class="projectlogo">
+          <img src="img/project/logo.png">
+        </div>
+      </a>
+    </header>
+
+<!--헤더 메뉴-->
+
+<ol>
+    <li class="project_menu">
+        EDITORIALS
+        <span></span>
+    </li>
+    <li class="project_menu">
+        WEB
+        <span></span>
+    </li>
+    <li class="project_menu">
+        UI/UX
+        <span></span>
+    </li>
+    <li class="project_menu">
+        LOGO
+        <span></span>
+    </li>
+
+    <li class="project_menu">
+        ETC
+        <span></span>
+    </li>
+</ol>
+
+
+
+        <div id="hiddenleft"></div>
+
+
+
+
+    <section>
+      <!--세로 텍스트 메뉴-->
+            <div class="tm3">
+                <div class="righttm3">
+                  <a href="aboutme.html">
+                    ABOUT ME
+                  </a>
+                </div>
+                <div class="lefttm3">
+                  <a href="project.html">
+                    PROJECT
+                  </a>
+                </div>
+              </div>
+<!--배경-->
+      <div class="bg4"></div>
+
+<!--스크롤다운-->
+      <div class="scrolldown">
+        <a class="scroll"><span></span></a>
+      </div>
+
+<!--콘텐츠-->
+
+<div id="project_container">
+      <ul>
+          <li class="edit">
+              <a href="project_edit_01.html">
+                  <img src="img/project/edit1.jpg" alt="사랑의 기술 북커버">
+                  <div class="hover">
+                      <div class="project_text">
+                          <h6>2021.10</h6>
+              <h3>BOOKCOVER REDESIGN</h3>
+                <h4>북커버 리디자인</h4>
+                <h2>사랑의 기술</h2>
+                      </div>
+                  </div>
+              </a>
+          </li>
+
+          <li class="edit">
+              <a href="project_edit_02.html">
+                  <img src="img/project/edit3.jpg" alt="기분이 북커버">
+                  <div class="hover">
+                      <div class="project_text">
+                          <h6>2021.10</h6>
+              <h3>BOOKCOVER REDESIGN</h3>
+                <h4>북커버 리디자인</h4>
+                <h2>기분이 태도가 되지 않으려면</h2>
+                      </div>
+                  </div>
+              </a>
+          </li>
+
+          <li class="edit">
+              <a href="project_edit_03.html">
+                  <img src="img/project/edit4.jpg" alt="조명 전시회 포스터">
+                  <div class="hover">
+                      <div class="project_text">
+                          <h6>2021.10</h6>
+              <h3>POSTER DESIGN</h3>
+                <h4>전시회 포스터 디자인</h4>
+                <h2>LIGHTING EXHIBITION</h2>
+                      </div>
+                  </div>
+              </a>
+          </li>
+
+          <li class="edit">
+              <a href="project_edit_04.html">
+                  <img src="img/project/logo1.jpg" alt="베이크플러스 ci">
+                  <div class="hover">
+                      <div class="project_text">
+                          <h6>2021.10</h6>
+              <h3>LOGO REDESIGN</h3>
+                <h4>C.I 리디자인</h4>
+                <h2>BAKE PLUS</h2>
+                      </div>
+                  </div>
+              </a>
+          </li>
+
+          <li class="edit">
+              <a href="project_edit_05.html">
+                  <img src="img/project/logo5.jpg" alt="비욘드 bi">
+                  <div class="hover">
+                      <div class="project_text">
+                          <h6>2021.05</h6>
+              <h3>LOGO DESIGN</h3>
+                <h4>B.I 디자인</h4>
+                <h2>BEYOND</h2>
+                      </div>
+                  </div>
+              </a>
+          </li>
+
+    </ul>
+    </section>
+  </div>
+
+
+  </body>
+</html>

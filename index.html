@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Haneul's portfolio</title>
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="aos.css">
+
+    <meta property="og:title" content="하늘 포트폴리오" />
+    <meta property="og:url" content="https://gksmfdlfkrh.github.io/haneulportfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/yuhanvd.png">
+    <meta property="og:title" content="하늘 포트폴리오">
+    <meta property="og:description" content="Haneul's 2021 Portfolio">
+
+
+    <link rel="shortcut icon" href="img/favicon2.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon2.ico" type="image/x-icon">
+  </head>
+
+  <body style="overflow-x:hidden">
+
+    <div id="header_wrap">
+
+    <header>
+
+<!--좌측 메뉴 버튼-->
+
+      <div class="menu" onclick="leftmenu();"></div>
+
+      <div class="menu2" onclick="leftmenu();">
+        <li><a href="aboutme.html">About Me</a></li>
+      </div>
+
+        <div class="menu3" onclick="leftmenu();">
+        <li><a href="project.html">Project</a></li>
+      </div>
+
+        <script>
+          function leftmenu()
+          { let menu = document.querySelector(".menu");
+            let menu2 = document.querySelector(".menu2");
+            let menu3 = document.querySelector(".menu3");
+            menu.classList.toggle("active");
+            menu2.classList.toggle("active");
+            menu3.classList.toggle("active");}
+        </script>
+
+<!--로고-->
+      <div class="logo"><a href="index.html">
+        <img src="img/intro/logo.png" alt="logo"
+                  width="120px" height="185px"></a>
+      </div>
+
+    </header>
+
+  </div>
+
+    <section>
+<!--세로 텍스트 메뉴-->
+      <div class="tm">
+          <div class="lefttm">
+            <a href="aboutme.html">
+              ABOUT ME
+            </a>
+          </div>
+          <div class="righttm">
+            <a href="project.html">
+              PROJECT
+            </a>
+          </div>
+        </div>
+
+<!--배경-->
+      <div class="bg"></div>
+
+<!--비주얼 이미지-->
+      <div class="door">
+        <a href="intro.html">
+          <img src="img/intro/door.png" alt="door"
+                    width="575px" height="640px">
+        </a>
+        </div>
+
+        <div class="door2">
+          <a href="intro.html">
+            <img src="img/intro/door.png" alt="door2"
+                      width="575px" height="640px">
+          </a>
+          </div>
+
+    </section>
+
+
+
+
+
+  </body>
+</html>
